@@ -79,6 +79,8 @@ Vagrant.configure("2") do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
+  config.omnibus.chef_version = :latest
+  
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "chef/cookbooks"
     chef.roles_path = "chef/roles"
