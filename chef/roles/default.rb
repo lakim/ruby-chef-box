@@ -1,14 +1,20 @@
 name 'default'
 description 'Default role'
 default_attributes(
+  "users" => [ "deploy" ],
   "rbenv" => {
-    "rubies" => [ "1.9.3-p448" ],
-    "global" => "1.9.3-p448",
-    # "gems" => {
-    #   "1.9.3-p448" => [
-    #     { "name" => "bundler" }
-    #   ]
-    # }
+    "user_installs" => [
+      {
+        "user" => "deploy",
+        "rubies" => [ "1.9.3-p448" ],
+        "global" => "1.9.3-p448"
+        # "gems" => {
+        #   "1.9.3-p448" => [
+        #     { "name" => "bundler" }
+        #   ]
+        # }
+      }
+    ]
   },
   "postgresql" => {
     "password" => {
@@ -21,8 +27,9 @@ default_attributes(
 )
 run_list(
   'recipe[apt]',
+  'recipe[user::data_bag]',
   'recipe[git]',
   'recipe[ruby_build]',
-  'recipe[rbenv::system]',
+  'recipe[rbenv::user]',
   'recipe[postgresql::server]'
 )
