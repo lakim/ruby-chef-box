@@ -11,6 +11,9 @@
       "git": "https://github.com/fnichol/chef-rbenv.git",
       "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
     },
+    "postgresql": {
+      "locked_version": "3.0.2"
+    },
     "dmg": {
       "locked_version": "1.1.0"
     },
@@ -34,6 +37,9 @@
     },
     "java": {
       "locked_version": "1.10.0"
+    },
+    "openssl": {
+      "locked_version": "1.0.2"
     }
   }
 }

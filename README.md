@@ -11,3 +11,21 @@ Usage
 ```shell
 vagrant up
 ```
+
+Postgresql
+----------
+Default user/password: `postgres/postgres`
+
+To generate a password: 
+```shell
+echo -n 'iloverandompasswordsbutthiswilldo''postgres' | openssl md5 | sed 's/^.* //' | sed 's/^/md5/'
+```
+
+Test postgresql connection:
+```shell
+psql --username=postgres --password --host=localhost
+``
+
+TODO
+----
+User UNIX socket for postgres instead of TCP connection
