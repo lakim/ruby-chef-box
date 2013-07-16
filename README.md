@@ -29,14 +29,17 @@ vagrant ssh
 
 On the VM:
 ```shell
+sudo su deploy
 cd /vagrant
+gem install rails
+rails new .
 ```
 
 Postgresql
 ----------
 Default user/password: `postgres/postgres`
 
-To generate a password: 
+To generate a password:
 ```shell
 echo -n 'my_password''postgres' | openssl md5 | sed 's/^.* //' | sed 's/^/md5/'
 ```
@@ -48,4 +51,6 @@ psql --username=postgres --password --host=localhost
 
 TODO
 ----
-User UNIX socket for postgres instead of TCP connection
+* Fix rbenv PATH for deploy user
+* Use UNIX socket for postgres instead of TCP connection
+* Do not configure gems doc by default
