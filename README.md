@@ -48,7 +48,7 @@ echo -n 'my_password''postgres' | openssl md5 | sed 's/^.* //' | sed 's/^/md5/'
 Test postgresql connection:
 ```shell
 psql --username=postgres --password --host=localhost
-``
+```
 
 Using Vagrant snapshots
 -----------------------
