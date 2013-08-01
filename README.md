@@ -31,6 +31,8 @@ vagrant ssh
 On the VM:
 ```shell
 sudo su deploy
+echo "source /etc/profile.d/rbenv.sh" >> ~/.bashrc
+bash
 cd /vagrant
 gem install rails
 rails new .
