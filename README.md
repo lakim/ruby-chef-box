@@ -33,8 +33,15 @@ On the VM:
 sudo su deploy
 echo "source /etc/profile.d/rbenv.sh" >> ~/.bashrc
 bash
+rbenv versions
+```
+
+If the previous steps were fine, you should get a list of installed Ruby versions. Then go for some tests:
+```shell
 cd /vagrant
+gem install bundler
 gem install rails
+rbenv rehash
 rails new .
 ```
 
