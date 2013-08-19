@@ -82,12 +82,13 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = :latest
   
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "chef/cookbooks"
+    chef.cookbooks_path = [ "chef/cookbooks", "chef/site-cookbooks" ]
     chef.roles_path = "chef/roles"
     chef.data_bags_path = "chef/data_bags"
     # chef.add_recipe "mysql"
     chef.add_role "default"
-  
+    chef.add_role "web"
+    chef.add_role "php"
     # You may also specify custom JSON attributes:
     chef.json = {
       "authorization" => {

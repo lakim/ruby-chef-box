@@ -17,6 +17,9 @@
     "postgresql": {
       "locked_version": "3.0.2"
     },
+    "apache2": {
+      "locked_version": "1.6.2"
+    },
     "dmg": {
       "locked_version": "1.1.0"
     },
