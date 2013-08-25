@@ -12,8 +12,9 @@ Install Vagrant: http://docs.vagrantup.com/v2/installation/
 Install Virtual Box: https://www.virtualbox.org/wiki/Downloads
 
 ```shell
-vagrant plugin install vagrant-omnibus
 gem install berkshelf
+vagrant plugin install vagrant-omnibus
+vagrant plugin install vagrant-berkshelf
 ```
 
 Usage
@@ -28,15 +29,15 @@ my_project/
     kitchen/ (submodule https://github.com/lakim/ruby-chef-box.git)
     app-cookbooks/ (project specific cookbooks)
     nodes/
-    Vagrantfile
-  ...
+  Vagrantfile
+  Berksfile
 ```
 
 ```shell
 cd my_project
 git submodule add https://github.com/lakim/ruby-chef-box.git chef/kitchen
-cd chef/kitchen
-berks install --path chef/cookbooks
+cp chef/kitchen/Berksfile.sample Berksfile
+cp chef/kitchen/Vagrantfile.sample Vagrantfile
 vagrant up
 vagrant ssh
 ```
