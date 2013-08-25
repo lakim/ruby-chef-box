@@ -14,8 +14,17 @@
       "git": "https://github.com/fnichol/chef-rbenv.git",
       "ref": "9afb4e5da2e6212504a12de3bbbd410cd96100f6"
     },
+    "database": {
+      "locked_version": "1.4.0"
+    },
     "postgresql": {
       "locked_version": "3.0.2"
+    },
+    "mysql": {
+      "locked_version": "3.0.2"
+    },
+    "php": {
+      "locked_version": "1.2.2"
     },
     "apache2": {
       "locked_version": "1.6.2"
@@ -44,8 +53,17 @@
     "java": {
       "locked_version": "1.10.0"
     },
+    "aws": {
+      "locked_version": "0.101.4"
+    },
+    "xfs": {
+      "locked_version": "1.1.0"
+    },
     "openssl": {
       "locked_version": "1.0.2"
+    },
+    "xml": {
+      "locked_version": "1.1.2"
     }
   }
 }
