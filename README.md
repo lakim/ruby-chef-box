@@ -19,10 +19,23 @@ gem install berkshelf
 Usage
 -----
 
+The recommended way is to use this kitchen as a git submodule.
+Here is a good example of project structure:
+
+```
+my_project/
+  chef/
+    kitchen/ (submodule https://github.com/lakim/ruby-chef-box.git)
+    app-cookbooks/ (project specific cookbooks)
+    nodes/
+    Vagrantfile
+  ...
+```
+
 ```shell
-git clone https://github.com/lakim/ruby-chef-box.git my_project
 cd my_project
-rm -rf .git
+git submodule add https://github.com/lakim/ruby-chef-box.git chef/kitchen
+cd chef/kitchen
 berks install --path chef/cookbooks
 vagrant up
 vagrant ssh
